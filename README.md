@@ -1,30 +1,5 @@
 # HIT-UAV : YOLO11s vs YOLOv5s — 학습/추론 시간 + 성능 비교
 
-`hituav_bench.py` 한 파일입니다. 기존 9개 스크립트(step1c ~ step5)를 합치되,
-그래프·데이터분석 단계를 걷어내고 **시간 측정**을 대폭 강화했습니다.
-
-> 이전에 드린 `yolo_comparison.py`는 더미 데이터를 만드는 잘못된 버전입니다. 삭제하세요.
-
----
-
-## 무엇을 남기고 무엇을 뺐나
-
-| 원본 | 처리 |
-|---|---|
-| step1c_build | **유지** → `build` (HIT-UAV 원본을 그대로 불러옴) |
-| step2_analysis | 삭제 (박스 분포 분석 + 그림 5장) |
-| step2b_stratify | 삭제 (고도/각도 교란, IoU 민감도 + 그림 4장) |
-| step3a_eval | **유지·축소** → `eval11` (조건별 AP 분해와 그림 제거) |
-| step3c_control | 삭제 (교란 통제, 위치 오차) |
-| step4a_patch_v5 | **유지** → `setup5` (+ yolov5 자동 clone 추가) |
-| step4b_train_v5 | **유지** → `train5` |
-| step4c_eval_v5 | **유지·축소** → `eval5` |
-| step5_figures | 삭제 (하드코딩 값으로 그림 3장) |
-| — | **추가** → `compare` (시간 + 성능 통합 비교표) |
-
-matplotlib 의존성 자체가 사라졌습니다.
-
----
 
 ## 폴더 구성
 
